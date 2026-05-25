@@ -40,6 +40,13 @@
     .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
     .footer-logo img { height: 48px; filter: brightness(0) invert(1) opacity(0.7); }
     .footer-contact a { color: rgba(255,255,255,0.6); font-size: 0.82rem; text-decoration: none; display: block; }
+    .marquee-wrapper { overflow: hidden; width: 100%; }
+    .marquee-track { display: flex; width: max-content; animation: marquee 22s linear infinite; }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-item { display: flex; align-items: center; justify-content: center; padding: 0 48px; height: 80px; }
+    .marquee-item img { max-height: 48px; max-width: 140px; object-fit: contain; filter: grayscale(1) opacity(0.6); transition: filter 0.3s; }
+    .marquee-item img:hover { filter: grayscale(0) opacity(1); }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     @media (max-width: 640px) {
       .logo-header img { height: 44px; }
       .form-row { grid-template-columns: 1fr; }
@@ -108,31 +115,25 @@
   </div>
 </section>
 
-<section id="operadoras">
-  <div class="container">
-    <div style="text-align: center; margin-bottom: 52px;">
-      <span class="section-label">Parceiros</span>
-      <h2 class="section-title">Trabalhamos com as <span>principais operadoras</span> do Brasil</h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 800px; margin: 0 auto;">
-      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
-        <img src="logo-amil.svg" alt="Amil" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
-      </div>
-      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
-        <img src="logo-sulamerica.png" alt="SulAmérica" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
-      </div>
-      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
-        <img src="logo-bradesco.svg" alt="Bradesco Saúde" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
-      </div>
-      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
-        <img src="logo-porto.png" alt="Porto Seguro" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
-      </div>
-      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
-        <img src="logo-hapvida.png" alt="HapVida" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
-      </div>
-      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
-        <img src="logo-eva.webp" alt="Eva Saúde" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
-      </div>
+<section id="operadoras" style="padding: 60px 0; overflow: hidden;">
+  <div style="text-align: center; margin-bottom: 40px;">
+    <span class="section-label">Parceiros</span>
+    <h2 class="section-title">Trabalhamos com as <span>principais operadoras</span> do Brasil</h2>
+  </div>
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <div class="marquee-item"><img src="logo-amil.svg" alt="Amil" /></div>
+      <div class="marquee-item"><img src="logo-sulamerica.png" alt="SulAmérica" /></div>
+      <div class="marquee-item"><img src="logo-bradesco.svg" alt="Bradesco Saúde" /></div>
+      <div class="marquee-item"><img src="logo-porto.png" alt="Porto Seguro" /></div>
+      <div class="marquee-item"><img src="logo-hapvida.png" alt="HapVida" /></div>
+      <div class="marquee-item"><img src="logo-eva.webp" alt="Eva Saúde" /></div>
+      <div class="marquee-item"><img src="logo-amil.svg" alt="Amil" /></div>
+      <div class="marquee-item"><img src="logo-sulamerica.png" alt="SulAmérica" /></div>
+      <div class="marquee-item"><img src="logo-bradesco.svg" alt="Bradesco Saúde" /></div>
+      <div class="marquee-item"><img src="logo-porto.png" alt="Porto Seguro" /></div>
+      <div class="marquee-item"><img src="logo-hapvida.png" alt="HapVida" /></div>
+      <div class="marquee-item"><img src="logo-eva.webp" alt="Eva Saúde" /></div>
     </div>
   </div>
 </section>
