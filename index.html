@@ -4,1078 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plano de Saúde Empresarial | Marcelo Duarte</title>
-  <meta name="description" content="Plano de saúde empresarial para CNPJ. Consultor especializado com as melhores operadoras do mercado. Solicite sua cotação gratuita." />
+  <meta name="description" content="Plano de saúde empresarial para CNPJ em Sorocaba e região. Consultor especializado com as melhores operadoras do mercado. Solicite sua cotação gratuita." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --azul:       #1B3F8B;
-      --azul-dark:  #122d6a;
-      --azul-light: #2251a8;
-      --laranja:    #E8491A;
-      --laranja-h:  #cf3c10;
-      --cinza-bg:   #F4F6FA;
-      --cinza-borda:#DDE3EE;
-      --texto:      #1a1a2e;
-      --texto-soft: #4a5568;
-      --branco:     #ffffff;
+      --azul: #2563EB; --azul-dark: #1D4ED8; --azul-light: #3B82F6;
+      --laranja: #E8491A; --laranja-h: #cf3c10;
+      --cinza-bg: #F4F6FA; --cinza-borda: #DDE3EE;
+      --texto: #1a1a2e; --texto-soft: #4a5568; --branco: #ffffff;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--texto);
-      background: var(--branco);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── HEADER ─────────────────────────────────────── */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(27, 63, 139, 0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 14px 0;
-    }
-
-    .header-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .logo-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .logo-header img {
-      height: 40px;
-      width: auto;
-      filter: brightness(0) invert(1);
-    }
-
-    .header-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--laranja);
-      color: var(--branco);
-      font-weight: 700;
-      font-size: 0.875rem;
-      padding: 10px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-    .header-cta:hover { background: var(--laranja-h); transform: translateY(-1px); }
-
-    /* ── HERO ────────────────────────────────────────── */
-    .hero {
-      padding-top: 72px;
-      background: linear-gradient(135deg, #122d6a 0%, #1B3F8B 55%, #1e4fa8 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -120px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(232,73,26,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 64px 24px 0;
-      display: grid;
-      grid-template-columns: 1fr 460px;
-      gap: 48px;
-      align-items: end;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-content { padding-bottom: 64px; }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(232,73,26,0.15);
-      border: 1px solid rgba(232,73,26,0.4);
-      color: #ff7a50;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 100px;
-      margin-bottom: 24px;
-    }
-
-    .hero-badge svg { width: 14px; height: 14px; }
-
-    .hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      color: var(--branco);
-      line-height: 1.18;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero h1 span { color: #ff7a50; }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.75);
-      max-width: 480px;
-      margin-bottom: 36px;
-      line-height: 1.7;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .stat-num {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--branco);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.55);
-      margin-top: 4px;
-    }
-
-    .stat-divider {
-      width: 1px;
-      background: rgba(255,255,255,0.15);
-      align-self: stretch;
-    }
-
-    /* ── HERO PHOTO COLUMN ───────────────────────────── */
-    .hero-photo-col {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-photo-wrap {
-      position: relative;
-      width: 340px;
-    }
-
-    .hero-photo-wrap img {
-      width: 100%;
-      display: block;
-      border-radius: 16px 16px 0 0;
-      object-fit: cover;
-      object-position: top;
-      height: 420px;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35));
-    }
-
-    .hero-photo-badge {
-      position: absolute;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--laranja);
-      color: var(--branco);
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 6px 16px;
-      border-radius: 100px;
-      white-space: nowrap;
-      box-shadow: 0 4px 16px rgba(232,73,26,0.5);
-    }
-
-    /* ── FORM CARD ───────────────────────────────────── */
-    .form-card {
-      background: var(--branco);
-      border-radius: 16px;
-      padding: 32px 28px;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.18), 0 4px 12px rgba(0,0,0,0.08);
-      margin-bottom: -40px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .form-card-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--azul);
-      margin-bottom: 4px;
-    }
-
-    .form-card-sub {
-      font-size: 0.82rem;
-      color: var(--texto-soft);
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 14px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--texto);
-      margin-bottom: 5px;
-      letter-spacing: 0.01em;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1.5px solid var(--cinza-borda);
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      color: var(--texto);
-      background: var(--cinza-bg);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-      -webkit-appearance: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      border-color: var(--azul-light);
-      box-shadow: 0 0 0 3px rgba(34,81,168,0.12);
-      background: var(--branco);
-    }
-
-    .form-group input::placeholder { color: #aab0be; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
-    .btn-submit {
-      width: 100%;
-      padding: 13px;
-      background: var(--laranja);
-      color: var(--branco);
-      border: none;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      margin-top: 4px;
-      letter-spacing: 0.01em;
-    }
-
-    .btn-submit:hover {
-      background: var(--laranja-h);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(232,73,26,0.35);
-    }
-
-    .form-privacy {
-      text-align: center;
-      font-size: 0.72rem;
-      color: #9ba3b2;
-      margin-top: 10px;
-    }
-
-    .form-privacy svg { vertical-align: middle; margin-right: 3px; }
-
-    /* ── CARROSSEL OPERADORAS ───────────────────────── */
-    .carousel-strip {
-      background: rgba(255,255,255,0.06);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 20px 0;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .carousel-strip::before,
-    .carousel-strip::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 120px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .carousel-strip::before {
-      left: 0;
-      background: linear-gradient(to right, #1B3F8B, transparent);
-    }
-
-    .carousel-strip::after {
-      right: 0;
-      background: linear-gradient(to left, #1B3F8B, transparent);
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 0;
-      animation: scrollLeft 28s linear infinite;
-      width: max-content;
-    }
-
-    .carousel-track:hover { animation-play-state: paused; }
-
-    @keyframes scrollLeft {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .carousel-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 40px;
-      gap: 12px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .carousel-item svg,
-    .carousel-item img {
-      height: 28px;
-      width: auto;
-      max-width: 120px;
-      object-fit: contain;
-      opacity: 0.85;
-      filter: brightness(0) invert(1);
-      transition: opacity 0.2s;
-    }
-
-    .carousel-item:hover svg,
-    .carousel-item:hover img { opacity: 1; }
-
-    .carousel-item-name {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.75);
-      letter-spacing: 0.03em;
-    }
-
-    .carousel-sep {
-      color: rgba(255,255,255,0.15);
-      font-size: 1.2rem;
-      padding: 0 8px;
-      flex-shrink: 0;
-      align-self: center;
-    }
-
-    /* ── WAVE SEPARATOR ─────────────────────────────── */
-    .wave-sep {
-      background: linear-gradient(135deg, #122d6a 0%, #1B3F8B 55%, #1e4fa8 100%);
-      line-height: 0;
-    }
-
-    .wave-sep svg { display: block; width: 100%; }
-
-    /* ── SECTION BASE ───────────────────────────────── */
-    section { padding: 80px 0; }
-
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section-label {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--laranja);
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 800;
-      color: var(--azul);
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-    }
-
+    body { font-family: 'Inter', sans-serif; color: var(--texto); background: var(--branco); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(37,99,235,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 14px 0; }
+    .header-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo-header { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-header img { height: 56px; width: auto; filter: brightness(0) invert(1); }
+    .header-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--laranja); color: var(--branco); font-weight: 700; font-size: 0.875rem; padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--laranja); margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--azul); line-height: 1.25; letter-spacing: -0.02em; }
     .section-title span { color: var(--laranja); }
-
-    /* ── BENEFÍCIOS ─────────────────────────────────── */
-    #beneficios { background: var(--cinza-bg); padding-top: 100px; }
-
-    .beneficios-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .beneficios-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .beneficio-card {
-      background: var(--branco);
-      border-radius: 16px;
-      padding: 32px 28px;
-      border: 1px solid var(--cinza-borda);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .beneficio-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(27,63,139,0.1);
-    }
-
-    .beneficio-icon {
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, #e8f0ff 0%, #d0deff 100%);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .beneficio-icon svg { width: 26px; height: 26px; color: var(--azul); }
-
-    .beneficio-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--azul);
-      margin-bottom: 10px;
-    }
-
-    .beneficio-card p {
-      font-size: 0.875rem;
-      color: var(--texto-soft);
-      line-height: 1.7;
-    }
-
-    /* ── DIFERENCIAL CNPJ ──────────────────────────── */
-    #cnpj {
-      background: linear-gradient(135deg, #122d6a 0%, #1B3F8B 100%);
-      padding: 72px 0;
-    }
-
-    .cnpj-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .cnpj-content .section-label { color: #ff7a50; }
-
-    .cnpj-content .section-title { color: var(--branco); }
-
-    .cnpj-content p {
-      color: rgba(255,255,255,0.72);
-      margin-top: 16px;
-      font-size: 0.95rem;
-      line-height: 1.75;
-    }
-
-    .cnpj-list {
-      margin-top: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .cnpj-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .cnpj-check {
-      width: 22px;
-      height: 22px;
-      background: var(--laranja);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .cnpj-check svg { width: 12px; height: 12px; color: white; }
-
-    .cnpj-item span {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.6;
-    }
-
-    .cnpj-visual {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 40px 36px;
-    }
-
-    .cnpj-visual-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 24px;
-    }
-
-    .cnpj-range {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .range-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .range-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
-      width: 90px;
-      flex-shrink: 0;
-    }
-
-    .range-bar-wrap {
-      flex: 1;
-      background: rgba(255,255,255,0.08);
-      border-radius: 100px;
-      height: 8px;
-      overflow: hidden;
-    }
-
-    .range-bar {
-      height: 100%;
-      border-radius: 100px;
-      background: linear-gradient(90deg, var(--laranja), #ff7a50);
-    }
-
-    .range-note {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.4);
-      width: 50px;
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    /* ── OPERADORAS ─────────────────────────────────── */
-    #operadoras { background: var(--branco); }
-
-    .operadoras-header {
-      text-align: center;
-      margin-bottom: 52px;
-    }
-
-    .operadoras-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .operadora-card {
-      border: 1.5px solid var(--cinza-borda);
-      border-radius: 14px;
-      padding: 24px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-      background: var(--branco);
-      min-height: 100px;
-    }
-
-    .operadora-card:hover {
-      border-color: var(--azul-light);
-      box-shadow: 0 8px 24px rgba(27,63,139,0.1);
-      transform: translateY(-2px);
-    }
-
-    .operadora-logo {
-      width: 100%;
-      max-width: 120px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .operadora-logo svg,
-    .operadora-logo img {
-      max-width: 100%;
-      max-height: 44px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .operadora-name {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--texto-soft);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    /* ── SOBRE MARCELO ──────────────────────────────── */
-    #sobre { background: var(--cinza-bg); }
-
-    .sobre-inner {
-      display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-
-    .sobre-photo {
-      position: relative;
-    }
-
-    .sobre-photo img {
-      width: 100%;
-      border-radius: 20px;
-      display: block;
-      box-shadow: 0 24px 60px rgba(27,63,139,0.18);
-    }
-
-    .sobre-photo-badge {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      background: var(--azul);
-      color: var(--branco);
-      border-radius: 14px;
-      padding: 16px 20px;
-      box-shadow: 0 8px 24px rgba(27,63,139,0.3);
-    }
-
-    .sobre-photo-badge-num {
-      font-size: 1.6rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .sobre-photo-badge-label {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.65);
-      margin-top: 4px;
-    }
-
-    .sobre-content .section-label { margin-bottom: 8px; }
-
-    .sobre-content p {
-      font-size: 0.95rem;
-      color: var(--texto-soft);
-      line-height: 1.8;
-      margin-top: 16px;
-    }
-
-    .sobre-credentials {
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .credential {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: var(--branco);
-      border: 1px solid var(--cinza-borda);
-      border-radius: 10px;
-      padding: 14px 16px;
-    }
-
-    .credential-icon {
-      width: 34px;
-      height: 34px;
-      background: linear-gradient(135deg, #e8f0ff, #d0deff);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .credential-icon svg { width: 18px; height: 18px; color: var(--azul); }
-
-    .credential-text strong {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--texto);
-    }
-
-    .credential-text span {
-      font-size: 0.75rem;
-      color: var(--texto-soft);
-    }
-
-    /* ── CTA FINAL ──────────────────────────────────── */
-    #cta-final {
-      background: linear-gradient(135deg, #122d6a 0%, #1B3F8B 100%);
-      padding: 80px 0;
-    }
-
-    .cta-final-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .cta-final-content .section-label { color: #ff7a50; }
-    .cta-final-content .section-title { color: var(--branco); }
-    .cta-final-content p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      margin-top: 12px;
-      line-height: 1.7;
-    }
-
-    .cta-final-form {
-      background: var(--branco);
-      border-radius: 16px;
-      padding: 28px 24px;
-    }
-
-    .cta-final-form .form-card-title { margin-bottom: 16px; }
-
-    /* ── FOOTER ─────────────────────────────────────── */
-    footer {
-      background: #0d1f4a;
-      padding: 40px 0 28px;
-    }
-
-    .footer-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-logo img {
-      height: 36px;
-      filter: brightness(0) invert(1) opacity(0.7);
-    }
-
-    .footer-info {
-      text-align: center;
-    }
-
-    .footer-info p {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.4);
-    }
-
-    .footer-contact {
-      text-align: right;
-    }
-
-    .footer-contact a {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.82rem;
-      text-decoration: none;
-      display: block;
-      transition: color 0.2s;
-    }
-
-    .footer-contact a:hover { color: var(--branco); }
-
-    .footer-divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      max-width: 1140px;
-      margin: 28px auto 20px;
-    }
-
-    .footer-bottom {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-bottom p {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.3);
-    }
-
-    .susep-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.3);
-    }
-
-    /* ── TOAST ──────────────────────────────────────── */
-    .toast {
-      position: fixed;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%) translateY(80px);
-      background: #1a3a1a;
-      color: #6fcf6f;
-      border: 1px solid #2d6b2d;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      z-index: 9999;
-      opacity: 0;
-      transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), opacity 0.3s;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    /* ── RESPONSIVO ─────────────────────────────────── */
-    @media (max-width: 960px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding-bottom: 0;
-      }
-      .hero-content { padding-bottom: 32px; }
-      .hero-photo-col { display: none; }
-
-      .beneficios-grid { grid-template-columns: 1fr; gap: 16px; }
-      .cnpj-inner { grid-template-columns: 1fr; gap: 40px; }
-      .sobre-inner { grid-template-columns: 1fr; gap: 40px; }
-      .sobre-photo { max-width: 380px; margin: 0 auto; }
-      .sobre-photo-badge { bottom: -12px; right: -12px; }
-      .cta-final-inner { grid-template-columns: 1fr; gap: 36px; }
-      .operadoras-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 600px) {
-      section { padding: 60px 0; }
-      .hero-inner { padding: 40px 20px 0; }
+    section { padding: 80px 0; }
+    .form-card { background: var(--branco); border-radius: 16px; padding: 32px 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.18); }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--texto); margin-bottom: 5px; }
+    .form-group input, .form-group select { width: 100%; padding: 10px 14px; border: 1.5px solid var(--cinza-borda); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.875rem; color: var(--texto); background: var(--cinza-bg); outline: none; -webkit-appearance: none; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-submit { width: 100%; padding: 13px; background: var(--laranja); color: var(--branco); border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; margin-top: 4px; }
+    .toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px); background: #1a3a1a; color: #6fcf6f; border: 1px solid #2d6b2d; padding: 14px 28px; border-radius: 10px; font-size: 0.9rem; font-weight: 600; z-index: 9999; opacity: 0; transition: transform 0.35s, opacity 0.3s; }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    footer { background: #1E3A8A; padding: 40px 0 28px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo img { height: 48px; filter: brightness(0) invert(1) opacity(0.7); }
+    .footer-contact a { color: rgba(255,255,255,0.6); font-size: 0.82rem; text-decoration: none; display: block; }
+    @media (max-width: 640px) {
+      .logo-header img { height: 44px; }
       .form-row { grid-template-columns: 1fr; }
-      .sobre-credentials { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
-      .footer-contact { text-align: center; }
-      .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
-      .operadoras-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
-
-<!-- ── HEADER ──────────────────────────────────────────── -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo-header">
-      <img src="logo-md-2.png" alt="Marcelo Duarte" />
-    </a>
-    <a href="#formulario" class="header-cta">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Solicitar Cotação
-    </a>
+    <a href="#" class="logo-header"><img src="logo-md-2.png" alt="Marcelo Duarte" /></a>
+    <a href="#formulario" class="header-cta">Solicitar Cotação</a>
   </div>
 </header>
 
-<!-- ── HERO ────────────────────────────────────────────── -->
-<section class="hero" id="inicio">
-  <div class="hero-inner">
-
-    <!-- Conteúdo esquerdo -->
-    <div class="hero-content">
-      <div class="hero-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/></svg>
-        Exclusivo para Empresas · CNPJ
-      </div>
-
-      <h1>
-        Plano de Saúde<br />
-        Empresarial que<br />
-        <span>cabe no seu negócio</span>
-      </h1>
-
-      <p class="hero-sub">
-        Proteja sua equipe com os melhores planos do mercado. Consultoria especializada, sem custo e sem burocracia — do comparativo à contratação.
-      </p>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">8+</span>
-          <span class="stat-label">Operadoras parceiras</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Consultoria gratuita</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">CNPJ</span>
-          <span class="stat-label">A partir de 2 vidas</span>
-        </div>
-      </div>
+<section class="hero" id="inicio" style="padding-top:72px; background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 55%, #3B82F6 100%);">
+  <div class="container" style="padding: 64px 24px;">
+    <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; line-height: 1.18; margin-bottom: 20px;">
+      Plano de Saúde<br />Empresarial que<br /><span style="color: #ff7a50;">cabe no seu negócio</span>
+    </h1>
+    <p style="font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 480px; margin-bottom: 36px;">
+      Proteja sua equipe com os melhores planos do mercado. Consultoria especializada em <strong style="color:#fff;">Sorocaba e região</strong>, sem custo e sem burocracia.
+    </p>
+    <div style="display: flex; gap: 32px; flex-wrap: wrap;">
+      <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">8+</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">Operadoras parceiras</span></div>
+      <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">100%</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">Consultoria gratuita</span></div>
+      <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">CNPJ</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">A partir de 2 vidas</span></div>
+      <div><span style="font-size: 1.4rem; font-weight: 800; color: #fff; display: block;">Sorocaba</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">e região</span></div>
     </div>
-
-    <!-- Coluna direita: foto + form -->
-    <div class="hero-photo-col">
-      <div class="hero-photo-wrap">
-        <img src="MD 1.jpg" alt="Marcelo Duarte — Consultor de Benefícios Empresariais" />
-        <div class="hero-photo-badge">Consultor de Benefícios Empresariais</div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- Carrossel de Operadoras -->
-<div class="carousel-strip">
-  <div class="carousel-track" id="carousel-track">
-
-    <!-- Set 1 -->
-    <div class="carousel-item"><img src="logo-unimed.svg" alt="Unimed" /><span class="carousel-item-name">Unimed</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-amil.svg" alt="Amil" /><span class="carousel-item-name">Amil</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-sulamerica.png" alt="SulAmérica" /><span class="carousel-item-name">SulAmérica</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-bradesco.svg" alt="Bradesco Saúde" /><span class="carousel-item-name">Bradesco Saúde</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-porto.png" alt="Porto Seguro" /><span class="carousel-item-name">Porto Seguro</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-hapvida.png" alt="HapVida" /><span class="carousel-item-name">HapVida</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><svg viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg"><text x="16" y="27" font-family="Arial" font-weight="900" font-size="20" fill="white">EVA</text></svg><span class="carousel-item-name">EVA</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><svg viewBox="0 0 90 40" xmlns="http://www.w3.org/2000/svg"><text x="8" y="27" font-family="Arial" font-weight="800" font-size="17" fill="white">Fênix</text></svg><span class="carousel-item-name">Fênix</span></div>
-    <span class="carousel-sep">·</span>
-
-    <!-- Set 2 (duplicado para loop infinito) -->
-    <div class="carousel-item"><img src="logo-unimed.svg" alt="Unimed" /><span class="carousel-item-name">Unimed</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-amil.svg" alt="Amil" /><span class="carousel-item-name">Amil</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-sulamerica.png" alt="SulAmérica" /><span class="carousel-item-name">SulAmérica</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-bradesco.svg" alt="Bradesco Saúde" /><span class="carousel-item-name">Bradesco Saúde</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-porto.png" alt="Porto Seguro" /><span class="carousel-item-name">Porto Seguro</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><img src="logo-hapvida.png" alt="HapVida" /><span class="carousel-item-name">HapVida</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><svg viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg"><text x="16" y="27" font-family="Arial" font-weight="900" font-size="20" fill="white">EVA</text></svg><span class="carousel-item-name">EVA</span></div>
-    <span class="carousel-sep">·</span>
-    <div class="carousel-item"><svg viewBox="0 0 90 40" xmlns="http://www.w3.org/2000/svg"><text x="8" y="27" font-family="Arial" font-weight="800" font-size="17" fill="white">Fênix</text></svg><span class="carousel-item-name">Fênix</span></div>
-    <span class="carousel-sep">·</span>
-
-  </div>
-</div>
-
-<!-- Wave -->
-<div class="wave-sep">
-  <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#F4F6FA"/>
-  </svg>
-</div>
-
-<!-- ── FORMULÁRIO PRINCIPAL ─────────────────────────────── -->
 <section id="formulario" style="background: var(--cinza-bg); padding: 60px 0 80px;">
   <div class="container">
     <div style="max-width: 640px; margin: 0 auto;">
       <div style="text-align:center; margin-bottom: 32px;">
         <span class="section-label">Cotação gratuita</span>
         <h2 class="section-title">Receba propostas das <span>melhores operadoras</span></h2>
-        <p style="color: var(--texto-soft); margin-top: 12px; font-size:0.92rem;">Preencha o formulário e entraremos em contato em até 24 horas com um comparativo personalizado para sua empresa.</p>
       </div>
-
       <form class="form-card" id="form-principal" onsubmit="submitForm(event, 'form-principal')">
         <div class="form-row">
-          <div class="form-group">
-            <label for="nome">Nome completo *</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-          </div>
-          <div class="form-group">
-            <label for="empresa">Nome da empresa *</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Razão social ou fantasia" required />
-          </div>
+          <div class="form-group"><label>Nome completo *</label><input type="text" name="nome" placeholder="Seu nome" required /></div>
+          <div class="form-group"><label>Nome da empresa *</label><input type="text" name="empresa" placeholder="Razão social ou fantasia" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>WhatsApp / Telefone *</label><input type="tel" name="telefone" placeholder="(00) 00000-0000" required /></div>
+          <div class="form-group"><label>E-mail corporativo *</label><input type="email" name="email" placeholder="voce@empresa.com.br" required /></div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="telefone">WhatsApp / Telefone *</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail corporativo *</label>
-            <input type="email" id="email" name="email" placeholder="voce@empresa.com.br" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vidas">Número de funcionários *</label>
-            <select id="vidas" name="vidas" required>
+            <label>Número de funcionários *</label>
+            <select name="vidas" required>
               <option value="" disabled selected>Selecione</option>
               <option value="2-5">2 a 5 vidas</option>
               <option value="6-10">6 a 10 vidas</option>
@@ -1085,448 +100,93 @@
               <option value="100+">Acima de 100 vidas</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="cidade">Cidade / Estado *</label>
-            <input type="text" id="cidade" name="cidade" placeholder="Ex: São Paulo / SP" required />
-          </div>
+          <div class="form-group"><label>Cidade / Estado *</label><input type="text" name="cidade" placeholder="Ex: Sorocaba / SP" required /></div>
         </div>
-        <div class="form-group">
-          <label for="plano-atual">Possui plano atualmente?</label>
-          <select id="plano-atual" name="plano-atual">
-            <option value="" disabled selected>Selecione</option>
-            <option value="nao">Não, estou contratando pela primeira vez</option>
-            <option value="sim-renovar">Sim, quero renovar/migrar de operadora</option>
-            <option value="sim-ampliar">Sim, quero ampliar a cobertura</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-submit">
-          Quero receber minha cotação gratuita →
-        </button>
-        <p class="form-privacy">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Seus dados estão protegidos e não serão compartilhados com terceiros.
-        </p>
+        <button type="submit" class="btn-submit">Quero receber minha cotação gratuita →</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ── BENEFÍCIOS ───────────────────────────────────────── -->
-<section id="beneficios">
-  <div class="container">
-    <div class="beneficios-header">
-      <span class="section-label">Por que contratar</span>
-      <h2 class="section-title">Vantagens do plano <span>empresarial</span></h2>
-    </div>
-    <div class="beneficios-grid">
-
-      <div class="beneficio-card">
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Cobertura Abrangente</h3>
-        <p>Consultas, exames, internações, cirurgias e emergências com ampla rede credenciada em todo o Brasil.</p>
-      </div>
-
-      <div class="beneficio-card">
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <h3>Custo-Benefício Superior</h3>
-        <p>Planos empresariais têm valores até 40% menores que planos individuais, com cobertura equivalente ou superior.</p>
-      </div>
-
-      <div class="beneficio-card">
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Retenção de Talentos</h3>
-        <p>Benefícios de saúde são o segundo fator mais valorizado por colaboradores, reduzindo turnover e aumentando produtividade.</p>
-      </div>
-
-      <div class="beneficio-card">
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
-        </div>
-        <h3>Benefício Fiscal</h3>
-        <p>Empresas do Lucro Real podem deduzir o custo do plano de saúde do Imposto de Renda, reduzindo a carga tributária.</p>
-      </div>
-
-      <div class="beneficio-card">
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-        </div>
-        <h3>Contratação Ágil</h3>
-        <p>Processo 100% digital e simplificado. Da cotação à implantação em poucos dias, sem burocracia desnecessária.</p>
-      </div>
-
-      <div class="beneficio-card">
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.4 2 2 0 0 1 3.91 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.92 6.92l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <h3>Suporte Especializado</h3>
-        <p>Acompanhamento pós-venda dedicado. Resolução de sinistros, reembolsos e alterações cadastrais sem complicação.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── CNPJ DIFERENCIAL ─────────────────────────────────── -->
-<section id="cnpj">
-  <div class="container">
-    <div class="cnpj-inner">
-
-      <div class="cnpj-content">
-        <span class="section-label">Feito para empresas</span>
-        <h2 class="section-title">Por que contratar <span style="color:#ff7a50">pelo CNPJ</span> faz toda a diferença</h2>
-        <p>Enquanto o plano individual está sujeito a reajustes agressivos e carências extensas, o plano empresarial oferece condições exclusivas que só estão disponíveis para CNPJs.</p>
-
-        <div class="cnpj-list">
-          <div class="cnpj-item">
-            <div class="cnpj-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
-            </div>
-            <span>Carências reduzidas ou zeradas para empresas novas</span>
-          </div>
-          <div class="cnpj-item">
-            <div class="cnpj-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
-            </div>
-            <span>Reajuste negociado coletivamente, com menor impacto anual</span>
-          </div>
-          <div class="cnpj-item">
-            <div class="cnpj-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
-            </div>
-            <span>Possibilidade de incluir dependentes em condições especiais</span>
-          </div>
-          <div class="cnpj-item">
-            <div class="cnpj-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
-            </div>
-            <span>Sem declaração de saúde para empresas com mais de 30 vidas</span>
-          </div>
-          <div class="cnpj-item">
-            <div class="cnpj-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg>
-            </div>
-            <span>Disponível a partir de 2 vidas (sócio + 1 funcionário)</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="cnpj-visual">
-        <p class="cnpj-visual-title">Comparativo de custo por vida</p>
-        <div class="cnpj-range">
-          <div class="range-item">
-            <span class="range-label">Individual</span>
-            <div class="range-bar-wrap">
-              <div class="range-bar" style="width:100%; background: linear-gradient(90deg,#c0392b,#e74c3c);"></div>
-            </div>
-            <span class="range-note" style="color:rgba(255,255,255,0.5);">+100%</span>
-          </div>
-          <div class="range-item">
-            <span class="range-label">Empresarial</span>
-            <div class="range-bar-wrap">
-              <div class="range-bar" style="width:62%;"></div>
-            </div>
-            <span class="range-note" style="color:#ff7a50;">-38%</span>
-          </div>
-        </div>
-        <p style="margin-top:24px; font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.6;">*Estimativa de mercado. Os valores reais variam conforme operadora, faixa etária e abrangência contratada.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── OPERADORAS ───────────────────────────────────────── -->
 <section id="operadoras">
   <div class="container">
-    <div class="operadoras-header">
+    <div style="text-align: center; margin-bottom: 52px;">
       <span class="section-label">Parceiros</span>
       <h2 class="section-title">Trabalhamos com as <span>principais operadoras</span> do Brasil</h2>
-      <p style="color:var(--texto-soft); margin-top:12px; font-size:0.9rem; max-width:520px; margin-left:auto; margin-right:auto;">Acesso às melhores propostas do mercado em um único comparativo, sem precisar negociar separadamente com cada operadora.</p>
     </div>
-
-    <div class="operadoras-grid">
-
-      <!-- Unimed -->
-      <div class="operadora-card">
-        <div class="operadora-logo">
-          <img src="logo-unimed.svg" alt="Unimed" />
-        </div>
-        <span class="operadora-name">Unimed</span>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 800px; margin: 0 auto;">
+      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
+        <img src="logo-amil.svg" alt="Amil" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
       </div>
-
-      <!-- Amil -->
-      <div class="operadora-card">
-        <div class="operadora-logo">
-          <img src="logo-amil.svg" alt="Amil" />
-        </div>
-        <span class="operadora-name">Amil</span>
+      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
+        <img src="logo-sulamerica.svg" alt="SulAmérica" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
       </div>
-
-      <!-- SulAmérica -->
-      <div class="operadora-card">
-        <div class="operadora-logo">
-          <img src="logo-sulamerica.png" alt="SulAmérica Saúde" />
-        </div>
-        <span class="operadora-name">SulAmérica</span>
+      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
+        <img src="logo-bradesco.svg" alt="Bradesco Saúde" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
       </div>
-
-      <!-- Bradesco Saúde -->
-      <div class="operadora-card">
-        <div class="operadora-logo">
-          <img src="logo-bradesco.svg" alt="Bradesco Saúde" />
-        </div>
-        <span class="operadora-name">Bradesco Saúde</span>
+      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
+        <img src="logo-porto.svg" alt="Porto Seguro" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
       </div>
-
-      <!-- Porto Seguro -->
-      <div class="operadora-card">
-        <div class="operadora-logo">
-          <img src="logo-porto.png" alt="Porto Seguro" />
-        </div>
-        <span class="operadora-name">Porto Seguro</span>
+      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
+        <img src="logo-hapvida.png" alt="HapVida" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
       </div>
-
-      <!-- HapVida -->
-      <div class="operadora-card">
-        <div class="operadora-logo">
-          <img src="logo-hapvida.png" alt="HapVida" />
-        </div>
-        <span class="operadora-name">HapVida</span>
+      <div style="border: 1.5px solid var(--cinza-borda); border-radius: 14px; padding: 28px 24px; display: flex; align-items: center; justify-content: center;">
+        <img src="logo-eva.webp" alt="Eva Saúde" style="max-width: 120px; max-height: 44px; object-fit: contain;" />
       </div>
-
-      <!-- EVA -->
-      <div class="operadora-card">
-        <div class="operadora-logo">
-          <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="50" cy="25" rx="38" ry="16" fill="#0057A8"/>
-            <text x="28" y="31" font-family="Arial, sans-serif" font-weight="900" font-size="18" fill="white">EVA</text>
-          </svg>
-        </div>
-        <span class="operadora-name">EVA</span>
-      </div>
-
-      <!-- Fênix -->
-      <div class="operadora-card">
-        <div class="operadora-logo">
-          <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
-            <!-- Fênix estilizada -->
-            <path d="M20 35 C16 28 12 18 20 12 C24 8 28 10 30 15 C32 10 36 8 40 12 C48 18 44 28 40 35 C36 40 24 40 20 35 Z" fill="#C0392B"/>
-            <path d="M25 35 C23 30 22 22 27 18 C29 16 31 17 30 22 C30 17 32 16 34 18 C38 22 37 30 35 35 Z" fill="#E74C3C"/>
-            <text x="52" y="32" font-family="Arial, sans-serif" font-weight="800" font-size="17" fill="#C0392B">Fênix</text>
-          </svg>
-        </div>
-        <span class="operadora-name">Fênix</span>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ── SOBRE MARCELO ────────────────────────────────────── -->
-<section id="sobre">
+<section id="sobre" style="background: var(--cinza-bg);">
   <div class="container">
-    <div class="sobre-inner">
-
-      <div class="sobre-photo">
-        <img src="MD 2.jpg" alt="Marcelo Duarte" />
-      </div>
-
-      <div class="sobre-content">
+    <div style="display: grid; grid-template-columns: 420px 1fr; gap: 72px; align-items: center;">
+      <div><img src="MD 2.jpg" alt="Marcelo Duarte" style="width: 100%; border-radius: 20px;" /></div>
+      <div>
         <span class="section-label">Quem é Marcelo Duarte</span>
         <h2 class="section-title">Especialista em <span>benefícios</span> para empresas</h2>
-
-        <p>Com mais de uma década dedicada ao mercado de planos de saúde empresariais, Marcelo Duarte construiu sua trajetória ajudando empresas de todos os portes a estruturar benefícios de saúde que fazem sentido — tanto para o caixa da empresa quanto para o bem-estar dos colaboradores.</p>
-
-        <p>Atuando como consultor independente, oferece uma visão imparcial do mercado: sem vínculo exclusivo com nenhuma operadora, o objetivo é sempre encontrar a melhor solução para cada CNPJ.</p>
-
-        <div class="sobre-credentials">
-          <div class="credential">
-            <div class="credential-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
-            </div>
-            <div class="credential-text">
-              <strong>Corretor Habilitado</strong>
-              <span>Registrado na SUSEP</span>
-            </div>
-          </div>
-          <div class="credential">
-            <div class="credential-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="credential-text">
-              <strong>Consultor Independente</strong>
-              <span>Sem exclusividade</span>
-            </div>
-          </div>
-          <div class="credential">
-            <div class="credential-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="credential-text">
-              <strong>Foco em Empresas</strong>
-              <span>Especialidade em CNPJ</span>
-            </div>
-          </div>
-          <div class="credential">
-            <div class="credential-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div class="credential-text">
-              <strong>Atendimento Digital</strong>
-              <span>Todo o processo online</span>
-            </div>
-          </div>
-        </div>
+        <p style="font-size: 0.95rem; color: var(--texto-soft); line-height: 1.8; margin-top: 16px;">Com mais de uma década dedicada ao mercado de planos de saúde empresariais em <strong style="color: var(--texto);">Sorocaba e região</strong>, Marcelo Duarte construiu sua trajetória ajudando empresas de todos os portes a estruturar benefícios de saúde que fazem sentido — tanto para o caixa da empresa quanto para o bem-estar dos colaboradores.</p>
+        <p style="font-size: 0.95rem; color: var(--texto-soft); line-height: 1.8; margin-top: 16px;">Atuando como consultor independente, oferece uma visão imparcial do mercado: sem vínculo exclusivo com nenhuma operadora, o objetivo é sempre encontrar a melhor solução para cada CNPJ.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ── CTA FINAL ────────────────────────────────────────── -->
-<section id="cta-final">
-  <div class="container">
-    <div class="cta-final-inner">
-
-      <div class="cta-final-content">
-        <span class="section-label">Próximo passo</span>
-        <h2 class="section-title" style="color:white;">Pronto para <span style="color:#ff7a50;">proteger sua equipe?</span></h2>
-        <p>Preencha o formulário ao lado e receba em até 24 horas um comparativo completo das melhores propostas para o seu CNPJ. Sem compromisso, sem custo.</p>
-      </div>
-
-      <div class="cta-final-form">
-        <p class="form-card-title">Solicite sua cotação</p>
-        <form id="form-cta" onsubmit="submitForm(event, 'form-cta')">
-          <div class="form-group">
-            <label for="nome2">Nome completo *</label>
-            <input type="text" id="nome2" name="nome" placeholder="Seu nome" required />
-          </div>
-          <div class="form-group">
-            <label for="empresa2">Empresa *</label>
-            <input type="text" id="empresa2" name="empresa" placeholder="Razão social ou fantasia" required />
-          </div>
-          <div class="form-group">
-            <label for="telefone2">WhatsApp *</label>
-            <input type="tel" id="telefone2" name="telefone" placeholder="(00) 00000-0000" required />
-          </div>
-          <div class="form-group">
-            <label for="vidas2">Número de funcionários *</label>
-            <select id="vidas2" name="vidas" required>
-              <option value="" disabled selected>Selecione</option>
-              <option value="2-5">2 a 5 vidas</option>
-              <option value="6-10">6 a 10 vidas</option>
-              <option value="11-30">11 a 30 vidas</option>
-              <option value="31-50">31 a 50 vidas</option>
-              <option value="51-100">51 a 100 vidas</option>
-              <option value="100+">Acima de 100 vidas</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-submit">Quero minha cotação →</button>
-          <p class="form-privacy">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Dados 100% seguros e confidenciais.
-          </p>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ───────────────────────────────────────────── -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="logo-md-2.png" alt="Marcelo Duarte" />
-    </div>
-    <div class="footer-info">
-      <p>Marcelo Duarte — Consultor de Benefícios Empresariais</p>
-      <p style="margin-top:4px;">Especialista em Planos de Saúde para CNPJ</p>
-    </div>
-    <div class="footer-contact">
-      <a href="tel:+5515981175553">(15) 98117-5553</a>
-    </div>
-  </div>
-  <hr class="footer-divider" />
-  <div class="footer-bottom">
-    <p>© 2025 Marcelo Duarte. Todos os direitos reservados.</p>
-    <span class="susep-badge">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Corretor habilitado · Registro SUSEP
-    </span>
+    <div class="footer-logo"><img src="logo-md-2.png" alt="Marcelo Duarte" /></div>
+    <div style="text-align: center;"><p style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">Marcelo Duarte — Consultor de Benefícios Empresariais | Sorocaba e Região</p></div>
+    <div class="footer-contact"><a href="tel:+5515981175553">(15) 98117-5553</a></div>
   </div>
 </footer>
 
-<!-- ── TOAST NOTIFICAÇÃO ─────────────────────────────────── -->
-<div class="toast" id="toast">
-  ✓ Solicitação enviada! Entraremos em contato em até 24 horas.
-</div>
+<div class="toast" id="toast">✓ Solicitação enviada! Entraremos em contato em até 24 horas.</div>
 
-<!-- ── SCRIPTS ──────────────────────────────────────────── -->
 <script>
-  // Máscara de telefone
   document.querySelectorAll('input[type="tel"]').forEach(function(input) {
     input.addEventListener('input', function() {
       var v = this.value.replace(/\D/g, '');
-      if (v.length <= 10) {
-        v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
-      } else {
-        v = v.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
-      }
+      if (v.length <= 10) v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+      else v = v.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
       this.value = v;
     });
   });
-
-  // Envio do formulário via FormSubmit
   function submitForm(e, formId) {
     e.preventDefault();
     var form = document.getElementById(formId);
     var data = new FormData(form);
     var body = {};
     data.forEach(function(v, k) { body[k] = v; });
-
-    // Envia para FormSubmit (serviço gratuito, sem backend)
     fetch('https://formsubmit.co/ajax/lucas.polez5@gmail.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(Object.assign(body, {
-        _subject: 'Nova Cotação — Plano Empresarial | Marcelo Duarte',
-        _template: 'table'
-      }))
-    })
-    .then(function(r) { return r.json(); })
-    .then(function() {
-      form.reset();
-      showToast();
-    })
-    .catch(function() {
-      showToast(); // mostra mesmo se houver erro de rede em dev
-    });
+      body: JSON.stringify(Object.assign(body, { _subject: 'Nova Cotação — Plano Empresarial | Marcelo Duarte', _template: 'table' }))
+    }).then(function() { form.reset(); showToast(); }).catch(function() { showToast(); });
   }
-
   function showToast() {
     var t = document.getElementById('toast');
     t.classList.add('show');
     setTimeout(function() { t.classList.remove('show'); }, 5000);
   }
-
-  // Smooth scroll para links internos
-  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
 </script>
-
 </body>
 </html>
