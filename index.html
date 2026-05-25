@@ -21,7 +21,7 @@
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(37,99,235,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 14px 0; }
     .header-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .logo-header { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .logo-header img { height: 56px; width: auto; filter: brightness(0) invert(1); }
+    .logo-header img { height: 68px; width: auto; filter: brightness(0) invert(1); }
     .header-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--laranja); color: var(--branco); font-weight: 700; font-size: 0.875rem; padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
     .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--laranja); margin-bottom: 10px; }
@@ -48,9 +48,11 @@
     .marquee-item img { max-height: 40px; max-width: 130px; object-fit: contain; filter: brightness(0) invert(1) opacity(0.85); transition: opacity 0.3s; }
     .marquee-item img:hover { opacity: 1; }
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    @media (max-width: 640px) {
-      .logo-header img { height: 44px; }
+    @media (max-width: 768px) {
+      .logo-header img { height: 52px; }
       .form-row { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr !important; }
+      .hero-img { display: none; }
     }
   </style>
 </head>
@@ -63,18 +65,25 @@
 </header>
 
 <section class="hero" id="inicio" style="padding-top:72px; background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 55%, #3B82F6 100%);">
-  <div class="container" style="padding: 64px 24px;">
-    <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; line-height: 1.18; margin-bottom: 20px;">
-      Plano de Saúde<br />Empresarial que<br /><span style="color: #ff7a50;">cabe no seu negócio</span>
-    </h1>
-    <p style="font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 480px; margin-bottom: 36px;">
-      Proteja sua equipe com os melhores planos do mercado. Consultoria especializada em <strong style="color:#fff;">Sorocaba e região</strong>, sem custo e sem burocracia.
-    </p>
-    <div style="display: flex; gap: 32px; flex-wrap: wrap;">
-      <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">8+</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">Operadoras parceiras</span></div>
-      <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">100%</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">Consultoria gratuita</span></div>
-      <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">CNPJ</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">A partir de 2 vidas</span></div>
-      <div><span style="font-size: 1.4rem; font-weight: 800; color: #fff; display: block;">Sorocaba</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">e região</span></div>
+  <div class="container hero-grid" style="padding: 64px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+    <div>
+      <h1 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: #fff; line-height: 1.18; margin-bottom: 20px;">
+        Plano de Saúde<br />Empresarial que<br /><span style="color: #ff7a50;">cabe no seu negócio</span>
+      </h1>
+      <p style="font-size: 1.05rem; color: rgba(255,255,255,0.75); margin-bottom: 36px;">
+        Proteja sua equipe com os melhores planos do mercado. Consultoria especializada em <strong style="color:#fff;">Sorocaba e região</strong>, sem custo e sem burocracia.
+      </p>
+      <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+        <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">8+</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">Operadoras parceiras</span></div>
+        <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">100%</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">Consultoria gratuita</span></div>
+        <div><span style="font-size: 1.8rem; font-weight: 800; color: #fff; display: block;">CNPJ</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">A partir de 2 vidas</span></div>
+        <div><span style="font-size: 1.4rem; font-weight: 800; color: #fff; display: block;">Sorocaba</span><span style="font-size: 0.8rem; color: rgba(255,255,255,0.55);">e região</span></div>
+      </div>
+    </div>
+    <div class="hero-img" style="display: flex; justify-content: center;">
+      <img src="https://images.unsplash.com/photo-1564156280315-1d42b4651629?w=600&q=85&fit=crop&crop=faces,center"
+           alt="Família protegida"
+           style="width: 100%; max-width: 480px; height: 420px; object-fit: cover; border-radius: 24px; box-shadow: 0 24px 64px rgba(0,0,0,0.3);" />
     </div>
   </div>
   <div class="logo-strip">
